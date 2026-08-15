@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKURO ARMY | Join Now</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-blue: #00f2ff;
+            --neon-purple: #8a2be2;
+            --bg-dark: #0a0a0c;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            background: radial-gradient(circle at center, #1a1a2e 0%, #0a0a0c 100%);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 450px;
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            background-image: linear-gradient(var(--bg-dark), var(--bg-dark)), linear-gradient(to right, var(--neon-blue), var(--neon-purple));
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            margin-bottom: 20px;
+            animation: rotateGlow 3s linear infinite;
+        }
+
+        @keyframes rotateGlow { 0% { border-color: var(--neon-blue); } 50% { border-color: var(--neon-purple); } 100% { border-color: var(--neon-blue); } }
+
+        h1 { font-size: 32px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; background: linear-gradient(to right, var(--neon-blue), var(--neon-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        p { color: #aaa; font-size: 14px; margin-bottom: 30px; }
+
+        .cta-btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            border: none;
+            border-radius: 15px;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+        }
+
+        .cta-btn:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(0, 242, 255, 0.6); }
+
+        .footer { margin-top: 30px; font-size: 12px; color: #555; text-decoration: none; }
+        .footer:hover { color: var(--neon-blue); }
+
+        /* Toast Notifications */
+        #toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(20, 20, 25, 0.9);
+            padding: 15px 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--neon-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            transition: 0.5s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="https://i.ibb.co/fGM1p3DP/tg-img-Da-LAD7.jpg" alt="AKURO ARMY" class="profile-img">
+        <h1>AKURO ARMY</h1>
+        <p>Join the elite community. Get daily updates, trading signals, and expert market analysis.</p>
+        
+        <a href="https://telegram.me/+WG4kxJobaoQ4YTk9" class="cta-btn">JOIN TELEGRAM NOW</a>
+
+        <a href="https://t.me/GODXOWNER17" class="footer" style="display:block; margin-top: 40px;">Ads managed by @GODXOWNER17</a>
+    </div>
+
+    <!-- Notifications -->
+    <div id="toast">
+        <div style="width: 10px; height: 10px; border-radius: 50%; background: #00ff00;"></div>
+        <span id="toast-text">Aryan joined now</span>
+    </div>
+
+    <script>
+        const names = ["Aryan", "Riya", "Ishan", "Meera", "Vikram", "Anjali", "Kabir", "Sneha", "Aditya", "Rahul", "Priya"];
+        const toast = document.getElementById('toast');
+        const toastText = document.getElementById('toast-text');
+
+        function showNotification() {
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            toastText.textContent = `${randomName} joined the Army just now`;
+            toast.style.opacity = "1";
+            
+            setTimeout(() => {
+                toast.style.opacity = "0";
+            }, 3000);
+        }
+
+        setInterval(showNotification, 5000);
+    </script>
+</body>
+</html>
